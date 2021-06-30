@@ -30,10 +30,10 @@
 	</div>
 
 	<script>
-		var mult = 1
-		var sumTemp = 0
-		var operand = 'null'
-        var num=0
+		let mult = 1
+		let sumTemp = 0
+		let operand = 'null'
+        let num=0
 		function Calc() 
         {
             let strEvent =event.target.innerText
@@ -73,7 +73,7 @@
                     case '*' :
                     case '/' :
                     {               
-                        if (mult != 1 && operand == '/')
+                        if (operand == '/')
                         {
                             if (num)
                                 mult/=num
@@ -93,7 +93,15 @@
                         else
                            {
                                if (operand== '/')
-                                    mult = mult/num
+                                   { 
+                                        if (num)
+                                            mult/=num
+                                        else
+                                        {
+                                            excercise.value ='Error'
+                                            return
+                                        }
+                                   }
                                 else
                                     mult *= num
                             myResult =sumTemp+mult                            
