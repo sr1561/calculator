@@ -33,105 +33,105 @@
 		let mult = 1
 		let sumTemp = 0
 		let operand = 'null'
-        let num=0
+        	let num=0
 		function Calc() 
-        {
-            let strEvent =event.target.innerText
-            let myResult
-            if(strEvent!='Clear' && strEvent!= 'MC')
-                excercise.value+=strEvent
-            // if is digit 
-            if (isNaN(strEvent)== false)
-            {
-                num = num*10+Number(strEvent)
-                display.value =num
-            }
-            //if operand
-            else 
-            {   
-                if (operand== '-')
-                    num*=-1
-                switch (strEvent)
-                {    
-                    case '+' :
-                    case '-' :
-                    {
-                        if (operand== '+' || operand== 'null'||operand== '-')
-                            sumTemp+=num
-                        else
-                        {                         
-                                if (operand== '/')
-                                    mult = mult/num
-                                else
-                                    mult *= num
-                                sumTemp+=mult
-                        }
-                     
-                        mult=1
-                        break;
-                    }
-                    case '*' :
-                    case '/' :
-                    {               
-                        if (operand == '/')
-                        {
-                            if (num)
-                                mult/=num
-                            else
-                                excercise.value ='Error'
-                            break;
-                        }
-                        else
-                            mult*=num
-                        break;
-                    }
-                   
-                    case '=' :
-                    {
-                        if (operand =='+' ||operand =='-')
-                            myResult = sumTemp+num
-                        else
-                           {
-                               if (operand== '/')
-                                   { 
-                                        if (num)
-                                            mult/=num
-                                        else
-                                        {
-                                            excercise.value ='Error'
-                                            return
-                                        }
-                                   }
-                                else
-                                    mult *= num
-                            myResult =sumTemp+mult                            
-                            }
-                        excercise.value+=myResult
-                        break;
-                    }
-                    case 'Clear' :
-                    {
-                        let lengEx =excercise.value.length
-                        lengEx -= display.value.length
-                        excercise.value =excercise.value.substring(0,lengEx)
-                        break;
-                    }
-                    case 'MC' :
-                    {
-                        display.value=''
-                        excercise.value=''
-                        sumTemp=0
-                        mult=1
-                        break;
-                    }       
-                    
-                }
-                num=0
-                operand= strEvent
-                display.value=''
-                console.log('Mult=: ' +mult +'Sum=:' + sumTemp ) 
-            }
-           
-        }
+      		  {
+		    let strEvent =event.target.innerText
+		    let myResult
+		    if(strEvent!='Clear' && strEvent!= 'MC')
+			excercise.value+=strEvent
+		    // if is digit 
+		    if (isNaN(strEvent)== false)
+		    {
+			num = num*10+Number(strEvent)
+			display.value =num
+		    }
+		    //if operand
+		    else 
+		    {   
+			if (operand== '-')
+			    num*=-1
+			switch (strEvent)
+			{    
+			    case '+' :
+			    case '-' :
+			    {
+				if (operand== '+' || operand== 'null'||operand== '-')
+				    sumTemp+=num
+				else
+				{                         
+					if (operand== '/')
+					    mult = mult/num
+					else
+					    mult *= num
+					sumTemp+=mult
+				}
+
+				mult=1
+				break;
+			    }
+			    case '*' :
+			    case '/' :
+			    {               
+				if (operand == '/')
+				{
+				    if (num)
+					mult/=num
+				    else
+					excercise.value ='Error'
+				    break;
+				}
+				else
+				    mult*=num
+				break;
+			    }
+
+			    case '=' :
+			    {
+				if (operand =='+' ||operand =='-')
+				    myResult = sumTemp+num
+				else
+				   {
+				       if (operand== '/')
+					   { 
+						if (num)
+						    mult/=num
+						else
+						{
+						    excercise.value ='Error'
+						    return
+						}
+					   }
+					else
+					    mult *= num
+				    myResult =sumTemp+mult                            
+				    }
+				excercise.value+=myResult
+				break;
+			    }
+			    case 'Clear' :
+			    {
+				let lengEx =excercise.value.length
+				lengEx -= display.value.length
+				excercise.value =excercise.value.substring(0,lengEx)
+				break;
+			    }
+			    case 'MC' :
+			    {
+				display.value=''
+				excercise.value=''
+				sumTemp=0
+				mult=1
+				break;
+			    }       
+
+			}
+			num=0
+			operand= strEvent
+			display.value=''
+			console.log('Mult=: ' +mult +'Sum=:' + sumTemp ) 
+		    }
+
+		}
     </script>
     </body>
