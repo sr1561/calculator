@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <div id='myDiv'> <button id='btn'></button>
+    </div>
+        
+
+<script>
+    var d = new Date();
+    
+    // function randomStyle
+    var arr= ['background-color','border-color','border-radius','border-width',`left`,`top`]
+    var borderWid =[`thin`,`medium`, `thick`]
+
+
+    setInterval(paintDiv,1000);
+
+    function paintDiv()
+    {   
+        d= new Date()
+        let i = Math.floor(Math.random() * 256) %255
+        let j= borderWid[i%3]
+        let char = arr[0]
+        btn.innerHTML =`<h1> ${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`
+        console.log(`char : ${char}`)
+        btn.style= `${char} : rgb(${i},${i},${i})`
+        
+        console.log(`border-width : ${j}`)
+     
+        
+    }
+
+</script>
+
+</body>
+</html>
