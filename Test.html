@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <div id='myDiv' style="float: left;
+    width: 400px;
+    height: 200px;
+    " >
+    </div>
+        
+
+<script>
+    var d = new Date();
+    
+    setInterval(paintDiv,1000);
+
+    function paintDiv()
+    {   
+        d= new Date()
+        let i =(d.getSeconds()*20) %255
+        // myDiv.innerHTML =`<h1> ${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`
+        console.log (`<h1> ${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`)
+        myDiv.style= `background-color : rgb(${i}, ${i},${i})`
+        // myDiv.style = `color:rgb(0, ${i},0)`
+        
+    }
+
+</script>
+
+</body>
+</html>
