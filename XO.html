@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .container { 
+            text-align: center;  
+            width: 500px;  
+            height: 200px;  
+            padding-top: 100px; 
+            }
+            .button {
+            border: 2px solid #4CAF50; 
+            background-color: white;
+            color: black;
+            padding: 0px 30px;
+            text-align: center;
+            text-decoration: line-through;
+            display: inline-block;
+            font-size: 20px;
+        
+            cursor: pointer;
+            }
+        </style>
+        </head>
+        <body>
+<body>
+
+    <div id='myDiv' class="container">
+    </div>
+
+<script>
+    var d = new Date();
+    createBoard()
+    
+    
+    //create board
+    function createBoard()
+    {
+        for (var i=1; i<10 ; i++)
+        {
+            console.log(`i=: ${i}`)
+            
+            myDiv.innerHTML += `<button id="${i-1}" class="button"><h1>x</h1> </button>`
+            
+            if (!(i%3))
+            myDiv.innerHTML+=`<br>`
+        }
+    }
+    
+    // function randomStyle
+    var arr= ['background-color','border-color','border-radius','border-width',`left`,`top`]
+    var borderWid =[`thin`,`medium`, `thick`]
+
+
+    setInterval(paintDiv,1000);
+
+    function paintDiv()
+    {   
+        
+    }
+
+</script>
+
+</body>
+</html>
