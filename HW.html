@@ -19,16 +19,34 @@
     function paintDiv()
     {   
         d= new Date()
-        let i = Math.floor(Math.random() * 256) %255
+        let i = Math.floor(Math.random() * 256) 
         let j= borderWid[i%3]
-        let char = arr[0]
+        let char = arr[i%6]
         btn.innerHTML =`<h1> ${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`
-        console.log(`char : ${char}`)
-        btn.style= `${char} : rgb(${i},${i},${i})`
-        
-        console.log(`border-width : ${j}`)
-     
-        
+       
+        console.log(`left : ${i%300}px`)
+        switch (char)
+        {
+            case `background-color` :
+                    btn.style= `${char} : rgb(${i%255},${i%255},${i%255})`
+                    console.log(`${char} : rgb(${i%255},${i%255},${i%255})`)
+                    break;
+            case `border-color`:
+                    btn.style= `${char} : rgb(${i%255},${i%255},${i%255})`
+                    break;
+            case `border-width`:
+                    btn.style= `border-width : ${j}`
+                    break;
+            case `border-radius`:
+                    btn.style= `border-radius : ${i%100}%`
+                    break;
+            case `left`:
+                    myDiv.style= ` position: relative; left : ${i%700}px`
+                    break;
+            case `top`:
+                    myDiv.style= ` position: relative; top : ${i%700}px`
+                    break;
+        }
     }
 
 </script>
